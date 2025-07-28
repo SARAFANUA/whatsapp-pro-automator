@@ -1,11 +1,12 @@
 // src/api/middlewares/auth.middleware.js
-// const logger = require('../../core/Logger'); // !!! ВИДАЛИ ЦЕЙ РЯДОК !!!
 const config = require('../../../config');
 
-// Експортуємо ФУНКЦІЮ, яка повертає middleware, і ця функція приймає логер
+// Цей модуль тепер експортує ФУНКЦІЮ, яка приймає логерInstance
+// і повертає об'єкт з middleware функціями.
 module.exports = (loggerInstance) => {
     if (!loggerInstance) {
-        console.error("CRITICAL ERROR: Auth Middleware initialization failed, logger is missing!");
+        // Якщо логер не передано, це критична помилка
+        console.error("CRITICAL ERROR: Auth Middleware requires a logger instance for initialization!");
         process.exit(1);
     }
 
@@ -14,7 +15,7 @@ module.exports = (loggerInstance) => {
             const apiKey = req.headers['x-api-key'] || req.query.apiKey;
 
             if (!apiKey || apiKey !== config.api.apiKey) {
-                // Тепер використовуємо loggerInstance, який був переданий
+                // Використовуємо переданий loggerInstance
                 loggerInstance.warn('[HTTP API] Unauthorized API access attempt.', { module: 'AuthMiddleware', ip: req.ip });
                 return res.status(401).json({ error: 'Unauthorized: Invalid API Key' });
             }

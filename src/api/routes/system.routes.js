@@ -2,10 +2,9 @@
 const express = require('express');
 const router = express.Router();
 const SystemController = require('../controllers/SystemController');
-// const authMiddleware = require('../middlewares/auth.middleware'); // !!! ВИДАЛИ ЦЕЙ РЯДОК !!!
+// const authMiddleware = require('../middlewares/auth.middleware'); // <--- ВИДАЛИ ЦЕЙ РЯДОК
 
-// !!! ВИДАЛИ ЦЕЙ РЯДОК !!!
-// router.use(authMiddleware.verifyApiKey);
+// router.use(authMiddleware.verifyApiKey); // <--- ВИДАЛИ ЦЕЙ РЯДОК, МИ ЗАСТОСОВУЄМО ЙОГО В api/index.js
 
 router.get('/status', SystemController.getStatus);
 router.get('/logs', SystemController.getLogs);

@@ -1,9 +1,8 @@
 // src/api/controllers/SystemController.js
-// const logger = require('../../core/Logger'); // НЕ ПОТРІБЕН БІЛЬШЕ
-// const config = require('../../../config'); // МОЖЕ ЗНАДОБИТИСЯ, АЛЕ ПОКИ ТИМЧАСОВО БЕРЕМО З req.app.logger.debug(config)
-
+// const logger = require('../../core/Logger'); // Цей рядок має бути видалений, бо ми отримуємо логер з req.app
+// const config = require('../../../config'); // Цей рядок може залишитися, якщо він потрібен для якихось значень конфігу, але логер вже не потрібен
 const fs = require('fs');
-const path = require('path'); // Додай path для коректного шляху до логів
+const path = require('path'); // <--- ДОДАЙ ЦЕЙ ІМПОРТ
 
 const SystemController = {
     async getStatus(req, res) {
@@ -16,19 +15,24 @@ const SystemController = {
 
         res.json({
             status: 'Running',
-            accounts: statuses, // Повертаємо статуси акаунтів
+            accounts: statuses,
             uptime: process.uptime(),
-            memoryUsage: process.memoryUsage()
+            memoryUsage: {
+                rss: process.memoryUsage().rss,
+                heapTotal: process.memoryUsage().heapTotal,
+                heapUsed: process.memoryUsage().heapUsed,
+                external: process.memoryUsage().external,
+                arrayBuffers: process.memoryUsage().arrayBuffers
+            }
         });
     },
 
     async getLogs(req, res) {
         const logger = req.app.logger; // Отримуємо логер з req.app
-        const appConfig = require('../../../config'); // Імпортуємо config тут, якщо потрібен
-        
+        const appConfig = require('../../../config'); // Імпортуємо config тут, якщо потрібен для шляхів логів
+
         logger.info('[HTTP API] Logs request received.', { module: 'HttpApi_SystemController' });
-        
-        // Змінимо шлях до логів, щоб він був динамічним і коректним
+
         const logFileName = appConfig.logging.logRotation.filename.replace('%DATE%', new Date().toISOString().slice(0, 10));
         const logFilePath = path.join(process.cwd(), appConfig.logging.logRotation.dirname, logFileName);
 
