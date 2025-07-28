@@ -1,23 +1,37 @@
 // src/api/index.js
 const express = require('express');
-const logger = require('../core/Logger');
-const config = require('../../config');
-const systemRoutes = require('./routes/system.routes'); // Скоро створимо
-// const authRoutes = require('./routes/auth.routes'); // Пізніше
-// const accountsRoutes = require('./routes/accounts.routes'); // Пізніше
+const config = require('../../config'); // Потрібен для доступу до config.api.apiKey
+const systemRoutes = require('./routes/system.routes');
+const createAuthMiddleware = require('./middlewares/auth.middleware'); // Імпортуємо функцію-фабрику middleware
 
-const app = express();
-app.use(express.json());
+module.exports = (loggerInstance, accountManagerInstance) => {
+    if (!loggerInstance) {
+        console.error("CRITICAL ERROR: API Server initialization failed, logger is missing!");
+        process.exit(1);
+    }
 
-// Загальні маршрути (статус, логи)
-app.use('/api/system', systemRoutes);
-// app.use('/api/auth', authRoutes); // Маршрути аутентифікації
-// app.use('/api/accounts', accountsRoutes); // Маршрути управління акаунтами
+    const app = express();
+    app.use(express.json());
 
-// Middleware для обробки помилок (завжди в кінці)
-app.use((err, req, res, next) => {
-    logger.error(`[HTTP API] Unhandled error: ${err.message}`, err.stack);
-    res.status(500).json({ error: 'Internal Server Error' });
-});
+    // Ініціалізуємо authMiddleware, передаючи йому логер
+    const authMiddleware = createAuthMiddleware(loggerInstance); // Створюємо інстанс middleware
 
-module.exports = app; // Експортуємо сам додаток Express
+    // Передаємо логер та accountManagerInstance в req для контролерів
+    app.use((req, res, next) => {
+        req.app.logger = loggerInstance;
+        req.app.accountManager = accountManagerInstance;
+        next();
+    });
+
+    // Застосовуємо authMiddleware до всіх маршрутів, що потребують його
+    // Наприклад, для systemRoutes
+    app.use('/api/system', authMiddleware.verifyApiKey, systemRoutes); // Застосовуємо тут
+
+    // Middleware для обробки помилок (завжди в кінці)
+    app.use((err, req, res, next) => {
+        loggerInstance.error(`[HTTP API] Unhandled error: ${err.message}`, { module: 'HttpApi', error: err, url: req.originalUrl, method: req.method });
+        res.status(500).json({ error: 'Internal Server Error' });
+    });
+
+    return app;
+};

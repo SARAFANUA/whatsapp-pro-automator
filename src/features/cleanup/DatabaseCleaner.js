@@ -1,43 +1,42 @@
 // src/features/cleanup/DatabaseCleaner.js
-const logger = require('../../core/Logger');
+// const logger = require('../../core/Logger'); // !!! ЦЕЙ РЯДОК НЕ ПОТРІБЕН, ЛОГЕР БУДЕ ПЕРЕДАВАТИСЯ !!!
 
 /**
  * Видаляє старі записи з таблиць бази даних.
+ * @param {object} loggerInstance - Екземпляр логера.
  * @param {object} databaseManager - Екземпляр DatabaseManager.
  * @param {number} messageMapRetentionDays - Кількість днів для зберігання записів message_map.
  * @param {number} groupsRetentionDays - Кількість днів для зберігання записів whatsapp_groups.
  * @returns {Promise<void>}
  */
-async function cleanupOldRecords(databaseManager, messageMapRetentionDays, groupsRetentionDays) {
+async function cleanupOldRecords(loggerInstance, databaseManager, messageMapRetentionDays, groupsRetentionDays) {
     const db = databaseManager.getDb();
-    logger.info('[DB Cleanup] Starting old records cleanup...');
+    loggerInstance.info('[DB Cleanup] Starting old records cleanup...', { module: 'DBCleanup' }); // Використовуємо loggerInstance
 
-    // Очищення message_map
     const messageMapDeleteQuery = `DELETE FROM message_map WHERE timestamp < DATETIME('now', ? || ' days')`;
     await new Promise((resolve, reject) => {
         db.run(messageMapDeleteQuery, [`-${messageMapRetentionDays}`], function(err) {
             if (err) {
-                logger.error(`[DB Cleanup] Error deleting old records from message_map: ${err.message}`, err);
+                loggerInstance.error(`[DB Cleanup] Error deleting old records from message_map: ${err.message}`, { module: 'DBCleanup', error: err });
                 return reject(err);
             }
-            logger.info(`[DB Cleanup] Deleted ${this.changes} old records from message_map (older than ${messageMapRetentionDays} days).`);
+            loggerInstance.info(`[DB Cleanup] Deleted ${this.changes} old records from message_map (older than ${messageMapRetentionDays} days).`, { module: 'DBCleanup' });
             resolve();
         });
     });
 
-    // Очищення whatsapp_groups
     const groupsDeleteQuery = `DELETE FROM whatsapp_groups WHERE lastUpdated < DATETIME('now', ? || ' days')`;
     await new Promise((resolve, reject) => {
         db.run(groupsDeleteQuery, [`-${groupsRetentionDays}`], function(err) {
             if (err) {
-                logger.error(`[DB Cleanup] Error deleting old records from whatsapp_groups: ${err.message}`, err);
+                loggerInstance.error(`[DB Cleanup] Error deleting old records from whatsapp_groups: ${err.message}`, { module: 'DBCleanup', error: err });
                 return reject(err);
             }
-            logger.info(`[DB Cleanup] Deleted ${this.changes} old records from whatsapp_groups (older than ${groupsRetentionDays} days).`);
+            loggerInstance.info(`[DB Cleanup] Deleted ${this.changes} old records from whatsapp_groups (older than ${groupsRetentionDays} days).`, { module: 'DBCleanup' });
             resolve();
         });
     });
-    logger.info('[DB Cleanup] Cleanup finished.');
+    loggerInstance.info('[DB Cleanup] Cleanup finished.', { module: 'DBCleanup' });
 }
 
 module.exports = { cleanupOldRecords };

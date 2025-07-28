@@ -1,0 +1,39 @@
+2025/07/28-19:22:02.415 6f48 Reusing MANIFEST D:\Sarafan\programing\whatsapp-pro-automator\.wwebjs_auth\session-whatsapp-pro-session-default_test_account\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2025/07/28-19:22:02.415 6f48 Recovering log #331
+2025/07/28-19:22:02.491 6f48 Reusing old log D:\Sarafan\programing\whatsapp-pro-automator\.wwebjs_auth\session-whatsapp-pro-session-default_test_account\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/000331.log 
+2025/07/28-19:22:03.811 6cb8 Level-0 table #340: started
+2025/07/28-19:22:03.958 6cb8 Level-0 table #340: 802374 bytes OK
+2025/07/28-19:22:03.997 6cb8 Delete type=0 #331
+2025/07/28-19:22:03.998 6cb8 Manual compaction at level-0 from '\x00;\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00<\x00\x00\x00' @ 0 : 0; will stop at (end)
+2025/07/28-19:22:05.061 9ec Compacting 1@1 + 5@2 files
+2025/07/28-19:22:05.302 9ec Generated table #341@1: 74316 keys, 2227039 bytes
+2025/07/28-19:22:05.572 9ec Generated table #342@1: 40617 keys, 2205466 bytes
+2025/07/28-19:22:05.773 9ec Generated table #343@1: 19491 keys, 2202028 bytes
+2025/07/28-19:22:05.955 9ec Generated table #344@1: 59491 keys, 2196886 bytes
+2025/07/28-19:22:06.053 9ec Generated table #345@1: 32090 keys, 759924 bytes
+2025/07/28-19:22:06.053 9ec Compacted 1@1 + 5@2 files => 9591343 bytes
+2025/07/28-19:22:06.076 9ec compacted to: files[ 0 0 5 0 0 0 0 ]
+2025/07/28-19:22:06.076 9ec Delete type=2 #333
+2025/07/28-19:22:06.076 9ec Delete type=2 #334
+2025/07/28-19:22:06.076 9ec Delete type=2 #335
+2025/07/28-19:22:06.076 9ec Delete type=2 #336
+2025/07/28-19:22:06.076 9ec Delete type=2 #337
+2025/07/28-19:22:06.076 9ec Delete type=2 #340
+2025/07/28-19:27:06.221 5de8 Level-0 table #347: started
+2025/07/28-19:27:06.359 5de8 Level-0 table #347: 721771 bytes OK
+2025/07/28-19:27:06.388 5de8 Delete type=0 #339
+2025/07/28-19:27:06.388 5de8 Manual compaction at level-0 from '\x00<\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00=\x00\x00\x00' @ 0 : 0; will stop at (end)
+2025/07/28-19:27:11.739 6a6c Compacting 1@1 + 5@2 files
+2025/07/28-19:27:11.993 6a6c Generated table #348@1: 77134 keys, 2230371 bytes
+2025/07/28-19:27:12.253 6a6c Generated table #349@1: 40833 keys, 2205036 bytes
+2025/07/28-19:27:12.474 6a6c Generated table #350@1: 19576 keys, 2224523 bytes
+2025/07/28-19:27:12.683 6a6c Generated table #351@1: 57466 keys, 2196079 bytes
+2025/07/28-19:27:12.785 6a6c Generated table #352@1: 34118 keys, 806941 bytes
+2025/07/28-19:27:12.785 6a6c Compacted 1@1 + 5@2 files => 9662950 bytes
+2025/07/28-19:27:12.807 6a6c compacted to: files[ 0 0 5 0 0 0 0 ]
+2025/07/28-19:27:12.808 6a6c Delete type=2 #341
+2025/07/28-19:27:12.808 6a6c Delete type=2 #342
+2025/07/28-19:27:12.808 6a6c Delete type=2 #343
+2025/07/28-19:27:12.808 6a6c Delete type=2 #344
+2025/07/28-19:27:12.808 6a6c Delete type=2 #345
+2025/07/28-19:27:12.808 6a6c Delete type=2 #347

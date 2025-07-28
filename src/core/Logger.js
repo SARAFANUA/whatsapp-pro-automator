@@ -2,10 +2,8 @@
 const winston = require('winston');
 require('winston-daily-rotate-file');
 
-
 let loggerInstance = null;
 
-// Функція тепер приймає конфігурацію як аргумент
 function initializeLogger(config) {
     if (!config) {
         console.error("CRITICAL ERROR: Logger initialization failed, config is missing!");
@@ -19,7 +17,18 @@ function initializeLogger(config) {
             format: winston.format.combine(
                 winston.format.timestamp({ format: 'YYYY-MM-DD HH:mm:ss' }),
                 winston.format.colorize(),
-                winston.format.printf(info => `${info.timestamp} [${info.level.toUpperCase()}]: ${info.message}`)
+                winston.format.printf(info => {
+                    let prefix = `${info.timestamp} [${info.level.toUpperCase()}]`;
+                    if (info.module) prefix += ` [${info.module}]`;
+                    if (info.accountId) prefix += ` [Acc:${info.accountId}]`;
+                    if (info.messageId) prefix += ` [Msg:${info.messageId}]`;
+                    if (info.pid) prefix += ` [PID:${info.pid}]`;
+
+                    if (info.stack) {
+                        return `${prefix}: ${info.message}\n${info.stack}`;
+                    }
+                    return `${prefix}: ${info.message}`;
+                })
             ),
             level: config.logging.level
         })
@@ -30,12 +39,23 @@ function initializeLogger(config) {
             dirname: config.logging.logRotation.dirname,
             filename: config.logging.logRotation.filename,
             datePattern: config.logging.logRotation.datePattern,
-            zippedArchive: config.logging.logRotation.zippedArchive, // <= ПРАВИЛЬНО ТЕПЕР!
+            zippedArchive: config.logging.logRotation.zippedArchive,
             maxSize: config.logging.logRotation.maxSize,
             maxFiles: config.logging.logRotation.maxFiles,
             format: winston.format.combine(
                 winston.format.timestamp({ format: 'YYYY-MM-DD HH:mm:ss' }),
-                winston.format.printf(info => `${info.timestamp} [${info.level.toUpperCase()}]: ${info.message}`)
+                winston.format.printf(info => {
+                    let prefix = `${info.timestamp} [${info.level.toUpperCase()}]`;
+                    if (info.module) prefix += ` [${info.module}]`;
+                    if (info.accountId) prefix += ` [Acc:${info.accountId}]`;
+                    if (info.messageId) prefix += ` [Msg:${info.messageId}]`;
+                    if (info.pid) prefix += ` [PID:${info.pid}]`;
+
+                    if (info.stack) {
+                        return `${prefix}: ${info.message}\n${info.stack}`;
+                    }
+                    return `${prefix}: ${info.message}`;
+                })
             ),
             level: config.logging.level
         });

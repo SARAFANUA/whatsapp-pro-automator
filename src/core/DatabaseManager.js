@@ -1,15 +1,20 @@
 // src/core/DatabaseManager.js
 const sqlite3 = require('sqlite3').verbose();
-const logger = require('./Logger'); // Правильний шлях до логера
-const config = require('../../config'); // Правильний шлях до конфігурації
+// const logger = require('./Logger'); // !!! ЦЕЙ РЯДОК НЕ ПОТРІБЕН, БО ЛОГЕР БУДЕ ПЕРЕДАВАТИСЯ !!!
+const config = require('../../config'); // Цей потрібен для конфігурації БД
 
-let dbInstance = null;
+// ВИДАЛИ ВСІ ЦІ РЯДКИ, ВОНИ НЕ МАЮТЬ БУТИ ТУТ!!!
+// logger.info(`[DB] Connected to database at ${this.dbPath}`, { module: 'DatabaseManager', dbPath: this.dbPath });
+// logger.error(`[DB] Error creating accounts table:`, { module: 'DatabaseManager', error: err });
+// ... і всі подібні виклики logger поза класом
 
 class DatabaseManager {
-    constructor(dbPath) { // Тепер шлях до БД передається як аргумент
+    // Тепер конструктор приймає інстанс логера!
+    constructor(loggerInstance, dbPath) {
+        this.logger = loggerInstance; // Зберігаємо інстанс логера
         this.dbPath = dbPath;
         this.db = null;
-        logger.info('[DB] DatabaseManager instance created.'); // Тепер це лог створення, а не ініціалізації
+        this.logger.info('[DB] DatabaseManager instance created.', { module: 'DatabaseManager' }); // Використовуємо this.logger
     }
 
     /**
@@ -20,10 +25,10 @@ class DatabaseManager {
         return new Promise((resolve, reject) => {
             this.db = new sqlite3.Database(this.dbPath, (err) => {
                 if (err) {
-                    logger.error(`[DB] Failed to connect to database at ${this.dbPath}:`, err.message);
+                    this.logger.error(`[DB] Failed to connect to database at ${this.dbPath}: ${err.message}`, { module: 'DatabaseManager', error: err });
                     return reject(err);
                 }
-                logger.info(`[DB] Connected to database at ${this.dbPath}`);
+                this.logger.info(`[DB] Connected to database at ${this.dbPath}`, { module: 'DatabaseManager', dbPath: this.dbPath });
                 this.setupSchema().then(resolve).catch(reject);
             });
         });
@@ -46,10 +51,10 @@ class DatabaseManager {
                     updatedAt DATETIME DEFAULT CURRENT_TIMESTAMP
                 )`, (err) => {
                     if (err) {
-                        logger.error('[DB] Error creating accounts table:', err);
+                        this.logger.error('[DB] Error creating accounts table:', { module: 'DatabaseManager', error: err });
                         return reject(err);
                     }
-                    logger.info('[DB] Table "accounts" checked/created successfully.');
+                    this.logger.info('[DB] Table "accounts" checked/created successfully.', { module: 'DatabaseManager' });
                 });
 
                 // Таблиця для відповідності пересланих повідомлень
@@ -63,10 +68,10 @@ class DatabaseManager {
                     FOREIGN KEY (accountId) REFERENCES accounts(id) ON DELETE CASCADE
                 )`, (err) => {
                     if (err) {
-                        logger.error('[DB] Error creating message_map table:', err);
+                        this.logger.error('[DB] Error creating message_map table:', { module: 'DatabaseManager', error: err });
                         return reject(err);
                     }
-                    logger.info('[DB] Table "message_map" checked/created successfully.');
+                    this.logger.info('[DB] Table "message_map" checked/created successfully.', { module: 'DatabaseManager' });
                 });
 
                 // Таблиця для списку груп
@@ -78,10 +83,10 @@ class DatabaseManager {
                     FOREIGN KEY (accountId) REFERENCES accounts(id) ON DELETE CASCADE
                 )`, (err) => {
                     if (err) {
-                        logger.error('[DB] Error creating whatsapp_groups table:', err);
+                        this.logger.error('[DB] Error creating whatsapp_groups table:', { module: 'DatabaseManager', error: err });
                         return reject(err);
                     }
-                    logger.info('[DB] Table "whatsapp_groups" checked/created successfully.');
+                    this.logger.info('[DB] Table "whatsapp_groups" checked/created successfully.', { module: 'DatabaseManager' });
                 });
 
                 // Таблиця для правил пересилання
@@ -90,7 +95,7 @@ class DatabaseManager {
                     accountId TEXT NOT NULL,
                     sourceId TEXT NOT NULL,
                     destinationId TEXT NOT NULL,
-                    filterType TEXT DEFAULT 'none', -- e.g., 'text', 'media', 'regex'
+                    filterType TEXT DEFAULT 'none',
                     filterValue TEXT DEFAULT '',
                     isActive BOOLEAN NOT NULL DEFAULT 1,
                     createdAt DATETIME DEFAULT CURRENT_TIMESTAMP,
@@ -98,11 +103,11 @@ class DatabaseManager {
                     FOREIGN KEY (accountId) REFERENCES accounts(id) ON DELETE CASCADE
                 )`, (err) => {
                     if (err) {
-                        logger.error('[DB] Error creating forwarding_rules table:', err);
+                        this.logger.error('[DB] Error creating forwarding_rules table:', { module: 'DatabaseManager', error: err });
                         return reject(err);
                     }
-                    logger.info('[DB] Table "forwarding_rules" checked/created successfully.');
-                    resolve(); // Resolve after all tables are created
+                    this.logger.info('[DB] Table "forwarding_rules" checked/created successfully.', { module: 'DatabaseManager' });
+                    resolve();
                 });
             });
         });
@@ -114,7 +119,7 @@ class DatabaseManager {
      */
     getDb() {
         if (!this.db) {
-            logger.error('[DB] Database not initialized. Call initialize() first.');
+            this.logger.error('[DB] Database not initialized. Call initialize() first.', { module: 'DatabaseManager' });
             throw new Error('Database not initialized.');
         }
         return this.db;
@@ -129,19 +134,19 @@ class DatabaseManager {
             if (this.db) {
                 this.db.close((err) => {
                     if (err) {
-                        logger.error('[DB] Error closing database:', err.message);
+                        this.logger.error('[DB] Error closing database:', { module: 'DatabaseManager', error: err });
                         return reject(err);
                     }
-                    logger.info('[DB] Database connection closed.');
-                    this.db = null; // Clear instance
+                    this.logger.info('[DB] Database connection closed.', { module: 'DatabaseManager' });
+                    this.db = null;
                     resolve();
                 });
             } else {
-                logger.warn('[DB] Attempted to close database, but it was not open.');
+                this.logger.warn('[DB] Attempted to close database, but it was not open.', { module: 'DatabaseManager' });
                 resolve();
             }
         });
     }
 }
 
-module.exports = DatabaseManager; // Експортуємо сам клас
+module.exports = DatabaseManager;
