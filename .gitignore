@@ -1,0 +1,11 @@
+# Node.js
+node_modules/
+npm-debug.log
+.env
+.DS_Store
+*.sqlite
+*.sqlite3
+/data/whatsapp_automator.db # Ваша база даних
+.wwebjs_auth/               # Папка сесій whatsapp-web.js
+logs/                       # Папка логів
+/.vscode                    # Якщо ви використовуєте VSCode і не хочете ділитися налаштуваннями

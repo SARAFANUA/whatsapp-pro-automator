@@ -1,0 +1,30 @@
+
+{
+  "name": "whatsapp-pro-automator",
+  "version": "1.0.0",
+  "description": "Powerful WhatsApp automation platform",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js", 
+    "test": "jest" 
+  },
+  "keywords": ["whatsapp", "automation", "bot", "wwebjs"],
+  "author": "mr.sarafan",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.19.2",
+    "winston": "^3.13.0",
+    "winston-daily-rotate-file": "^5.0.0",
+    "sqlite3": "^5.1.7",
+    "whatsapp-web.js": "^1.23.0",
+    "qrcode-terminal": "^0.12.0",
+    "joi": "^17.13.3", 
+    "dotenv": "^16.0.3" 
+    
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4",
+    "jest": "^29.7.0"
+  }
+}
