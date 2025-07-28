@@ -2,9 +2,11 @@
 const express = require('express');
 const config = require('../../config');
 const systemRoutes = require('./routes/system.routes');
-const createAuthMiddleware = require('./middlewares/auth.middleware'); // Імпортуємо функцію-фабрику middleware
+const accountsRoutes = require('./routes/accounts.routes'); // <-- ДОДАЙ ЦЕЙ ІМПОРТ
+const rulesRoutes = require('./routes/rules.routes');     // <-- ДОДАЙ ЦЕЙ ІМПОРТ
+const createAuthMiddleware = require('./middlewares/auth.middleware');
 
-module.exports = (loggerInstance, accountManagerInstance) => { // Приймаємо логер та менеджер акаунтів
+module.exports = (loggerInstance, accountManagerInstance) => {
     if (!loggerInstance) {
         console.error("CRITICAL ERROR: API Server initialization failed, logger is missing!");
         process.exit(1);
@@ -13,18 +15,18 @@ module.exports = (loggerInstance, accountManagerInstance) => { // Приймає
     const app = express();
     app.use(express.json());
 
-    // Ініціалізуємо authMiddleware, передаючи йому логерInstance
-    const authMiddleware = createAuthMiddleware(loggerInstance); // <--- Ось тут передаємо логер!
+    const authMiddleware = createAuthMiddleware(loggerInstance);
 
-    // Передаємо логер та accountManagerInstance в req.app для контролерів
     app.use((req, res, next) => {
         req.app.logger = loggerInstance;
         req.app.accountManager = accountManagerInstance;
         next();
     });
 
-    // Застосовуємо authMiddleware.verifyApiKey до всіх маршрутів /api/system
-    app.use('/api/system', authMiddleware.verifyApiKey, systemRoutes); // <--- Тепер authMiddleware коректно ініціалізований
+    // Застосовуємо authMiddleware.verifyApiKey до всіх маршрутів, що потребують його
+    app.use('/api/system', authMiddleware.verifyApiKey, systemRoutes);
+    app.use('/api/accounts', authMiddleware.verifyApiKey, accountsRoutes); // <-- ДОДАЙ ЦЕЙ РЯДОК
+    app.use('/api/rules', authMiddleware.verifyApiKey, rulesRoutes);     // <-- ДОДАЙ ЦЕЙ РЯДОК
 
     // Middleware для обробки помилок (завжди в кінці)
     app.use((err, req, res, next) => {

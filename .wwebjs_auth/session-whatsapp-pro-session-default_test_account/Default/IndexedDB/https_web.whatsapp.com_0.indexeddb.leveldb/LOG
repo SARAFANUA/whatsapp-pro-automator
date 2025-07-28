@@ -1,15 +1,15 @@
-2025/07/28-19:36:18.959 2650 Reusing MANIFEST D:\Sarafan\programing\whatsapp-pro-automator\.wwebjs_auth\session-whatsapp-pro-session-default_test_account\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
-2025/07/28-19:36:18.959 2650 Recovering log #346
-2025/07/28-19:36:19.042 2650 Reusing old log D:\Sarafan\programing\whatsapp-pro-automator\.wwebjs_auth\session-whatsapp-pro-session-default_test_account\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/000346.log 
-2025/07/28-19:36:20.421 24c4 Level-0 table #355: started
-2025/07/28-19:36:20.546 24c4 Level-0 table #355: 858530 bytes OK
-2025/07/28-19:36:20.571 24c4 Delete type=0 #346
-2025/07/28-19:36:20.571 24c4 Manual compaction at level-0 from '\x00=\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00>\x00\x00\x00' @ 0 : 0; will stop at (end)
-2025/07/28-19:36:21.743 e20 Compacting 1@1 + 5@2 files
-2025/07/28-19:36:22.003 e20 Generated table #356@1: 77728 keys, 2231536 bytes
-2025/07/28-19:36:22.221 e20 Generated table #357@1: 40901 keys, 2205992 bytes
-2025/07/28-19:36:22.398 e20 Generated table #358@1: 19519 keys, 2185397 bytes
-2025/07/28-19:36:22.558 e20 Generated table #359@1: 51556 keys, 2187396 bytes
-2025/07/28-19:36:22.665 e20 Generated table #360@1: 45829 keys, 1078257 bytes
-2025/07/28-19:36:22.665 e20 Compacted 1@1 + 5@2 files => 9888578 bytes
-2025/07/28-19:36:22.696 e20 compacted to: files[ 0 0 5 0 0 0 0 ]
+2025/07/28-19:43:45.123 3634 Reusing MANIFEST D:\Sarafan\programing\whatsapp-pro-automator\.wwebjs_auth\session-whatsapp-pro-session-default_test_account\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2025/07/28-19:43:45.123 3634 Recovering log #362
+2025/07/28-19:43:45.200 3634 Reusing old log D:\Sarafan\programing\whatsapp-pro-automator\.wwebjs_auth\session-whatsapp-pro-session-default_test_account\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/000362.log 
+2025/07/28-19:43:47.361 3634 Level-0 table #371: started
+2025/07/28-19:43:47.486 3634 Level-0 table #371: 821577 bytes OK
+2025/07/28-19:43:47.515 3634 Delete type=0 #362
+2025/07/28-19:43:47.515 3634 Manual compaction at level-0 from '\x00?\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00@\x00\x00\x00' @ 0 : 0; will stop at (end)
+2025/07/28-19:43:48.608 1fd8 Compacting 1@1 + 5@2 files
+2025/07/28-19:43:48.870 1fd8 Generated table #372@1: 80917 keys, 2235888 bytes
+2025/07/28-19:43:49.079 1fd8 Generated table #373@1: 42530 keys, 2204440 bytes
+2025/07/28-19:43:49.304 1fd8 Generated table #374@1: 19875 keys, 2181300 bytes
+2025/07/28-19:43:49.495 1fd8 Generated table #375@1: 46384 keys, 2185691 bytes
+2025/07/28-19:43:49.645 1fd8 Generated table #376@1: 52344 keys, 1231477 bytes
+2025/07/28-19:43:49.645 1fd8 Compacted 1@1 + 5@2 files => 10038796 bytes
+2025/07/28-19:43:49.671 1fd8 compacted to: files[ 0 0 5 0 0 0 0 ]
