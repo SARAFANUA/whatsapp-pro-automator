@@ -2,25 +2,17 @@
 const winston = require('winston');
 require('winston-daily-rotate-file');
 
-// !!! ЦЕЙ РЯДОК МАЄ БУТИ ВИДАЛЕНИЙ АБО ЗАКОМЕНТОВАНИЙ !!!
-// const config = require('../../config');
 
 let loggerInstance = null;
 
-// Функція initializeLogger тепер приймає config як аргумент.
-// Вона повертає інстанс логера Winston.
+// Функція тепер приймає конфігурацію як аргумент
 function initializeLogger(config) {
     if (!config) {
-        // Якщо config не передано, це КРИТИЧНА помилка.
         console.error("CRITICAL ERROR: Logger initialization failed, config is missing!");
-        // console.error("Passed config:", config); // Додатковий дебаг
         process.exit(1);
     }
 
-    // Перевірка, чи вже є інстанс логера (singleton-подібна поведінка)
-    if (loggerInstance) {
-        return loggerInstance;
-    }
+    if (loggerInstance) return loggerInstance;
 
     const transports = [
         new winston.transports.Console({
@@ -29,7 +21,7 @@ function initializeLogger(config) {
                 winston.format.colorize(),
                 winston.format.printf(info => `${info.timestamp} [${info.level.toUpperCase()}]: ${info.message}`)
             ),
-            level: config.logging.level // ВИКОРИСТОВУЄМО АРГУМЕНТ config
+            level: config.logging.level
         })
     ];
 
@@ -38,27 +30,25 @@ function initializeLogger(config) {
             dirname: config.logging.logRotation.dirname,
             filename: config.logging.logRotation.filename,
             datePattern: config.logging.logRotation.datePattern,
-            zippedArchive: config.logging.logRotation.zippedArchive,
+            zippedArchive: config.logging.logRotation.zippedArchive, // <= ПРАВИЛЬНО ТЕПЕР!
             maxSize: config.logging.logRotation.maxSize,
             maxFiles: config.logging.logRotation.maxFiles,
             format: winston.format.combine(
                 winston.format.timestamp({ format: 'YYYY-MM-DD HH:mm:ss' }),
                 winston.format.printf(info => `${info.timestamp} [${info.level.toUpperCase()}]: ${info.message}`)
             ),
-            level: config.logging.level // ВИКОРИСТОВУЄМО АРГУМЕНТ config
+            level: config.logging.level
         });
         transports.push(fileRotateTransport);
     }
 
     loggerInstance = winston.createLogger({
-        level: config.logging.level, // ВИКОРИСТОВУЄМО АРГУМЕНТ config
+        level: config.logging.level,
         transports: transports,
         exitOnError: false,
     });
 
-    return loggerInstance; // !!! ПОВЕРТАЄМО САМ ІНСТАНС ЛОГЕРА !!!
+    return loggerInstance;
 }
 
-// Експортуємо функцію initializeLogger.
-// НЕ сам інстанс, а функцію, яка його ініціалізує та повертає.
 module.exports = { initializeLogger };
