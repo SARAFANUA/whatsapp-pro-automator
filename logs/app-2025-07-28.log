@@ -566,3 +566,318 @@
 2025-07-28 19:43:50 [INFO] [WhatsAppClient] [Acc:default_test_account]: [WhatsAppClient-default_test_account] Client is ready and connected!
 2025-07-28 19:43:50 [INFO] [AccountRepository] [Acc:default_test_account]: [AccountRepository] Account default_test_account status updated to connected.
 2025-07-28 19:46:22 [INFO] [AppShutdown]: [Shutdown] SIGINT signal received. Starting graceful shutdown...
+2025-07-28 19:50:13 [INFO] [AppStartup]: [Config] Configuration validation successful.
+2025-07-28 19:50:13 [INFO] [AppStartup] [PID:5528]: [Startup] Application starting. PID: 5528
+2025-07-28 19:50:13 [INFO] [DatabaseManager]: [DB] DatabaseManager instance created.
+2025-07-28 19:50:13 [INFO] [DatabaseManager]: [DB] Connected to database at ./data/whatsapp_automator.db
+2025-07-28 19:50:13 [INFO] [DatabaseManager]: [DB] Table "accounts" checked/created successfully.
+2025-07-28 19:50:13 [INFO] [DatabaseManager]: [DB] Table "message_map" checked/created successfully.
+2025-07-28 19:50:13 [INFO] [DatabaseManager]: [DB] Table "whatsapp_groups" checked/created successfully.
+2025-07-28 19:50:13 [INFO] [DatabaseManager]: [DB] Table "forwarding_rules" checked/created successfully.
+2025-07-28 19:50:13 [INFO] [AppStartup]: [Startup] Database initialized successfully.
+2025-07-28 19:50:13 [INFO] [AccountRepository]: [AccountRepository] Initialized.
+2025-07-28 19:50:13 [INFO] [AccountManager]: [AccountManager] Initialized.
+2025-07-28 19:50:13 [INFO] [AccountManager]: [AccountManager] Loading accounts from database...
+2025-07-28 19:50:13 [INFO] [AccountRepository]: [AccountRepository] Initialized.
+2025-07-28 19:50:13 [INFO] [WhatsAppClient] [Acc:default_test_account]: [WhatsAppClient-default_test_account] Instance created.
+2025-07-28 19:50:13 [INFO] [AccountManager] [Acc:default_test_account]: [AccountManager] Loaded account from DB: default_test_account with status connected.
+2025-07-28 19:50:13 [INFO] [AccountManager]: [AccountManager] Successfully loaded 1 accounts from DB.
+2025-07-28 19:50:13 [INFO] [AccountManager]: [AccountManager] Starting all accounts...
+2025-07-28 19:50:13 [INFO] [DBCleanup]: [DB Cleanup] Scheduled periodic DB cleanup every 168 hours.
+2025-07-28 19:50:13 [INFO] [DBCleanup]: [DB Cleanup] Starting old records cleanup...
+2025-07-28 19:50:13 [INFO] [HttpApi]: [HTTP API] API Server started on http://localhost:3000
+2025-07-28 19:50:13 [INFO] [AccountRepository] [Acc:default_test_account]: [AccountRepository] Account default_test_account status updated to connecting.
+2025-07-28 19:50:13 [INFO] [AccountManager] [Acc:default_test_account]: [AccountManager] Starting account default_test_account...
+2025-07-28 19:50:13 [INFO] [WhatsAppClient] [Acc:default_test_account]: [WhatsAppClient-default_test_account] Initializing client...
+2025-07-28 19:50:13 [INFO] [DBCleanup]: [DB Cleanup] Deleted 0 old records from message_map (older than 30 days).
+2025-07-28 19:50:13 [INFO] [DBCleanup]: [DB Cleanup] Deleted 0 old records from whatsapp_groups (older than 90 days).
+2025-07-28 19:50:13 [INFO] [DBCleanup]: [DB Cleanup] Cleanup finished.
+2025-07-28 19:50:13 [INFO] [AppStartup]: [Startup] Application fully started and awaiting events.
+2025-07-28 19:50:19 [INFO] [WhatsAppClient] [Acc:default_test_account]: [WhatsAppClient-default_test_account] Client is ready and connected!
+2025-07-28 19:50:19 [INFO] [AccountRepository] [Acc:default_test_account]: [AccountRepository] Account default_test_account status updated to connected.
+2025-07-28 19:50:49 [INFO] [HttpApi_SystemController]: [HTTP API] Status request received.
+2025-07-28 19:51:02 [INFO] [AccountController]: [API] Request to get all accounts.
+2025-07-28 19:51:19 [INFO] [ForwardingRuleRepository]: [ForwardingRuleRepository] Initialized.
+2025-07-28 19:51:19 [INFO] [RuleController] [Acc::accountId]: [API] Request to get rules for account: :accountId.
+2025-07-28 19:51:41 [INFO] [ForwardingRuleRepository]: [ForwardingRuleRepository] Initialized.
+2025-07-28 19:52:52 [INFO] [AppShutdown]: [Shutdown] SIGINT signal received. Starting graceful shutdown...
+2025-07-28 21:32:03 [INFO] [AppStartup]: [Config] Configuration validation successful.
+2025-07-28 21:32:03 [INFO] [AppStartup] [PID:26188]: [Startup] Application starting. PID: 26188
+2025-07-28 21:32:03 [INFO] [DatabaseManager]: [DB] DatabaseManager instance created.
+2025-07-28 21:32:03 [INFO] [DatabaseManager]: [DB] Connected to database at ./data/whatsapp_automator.db
+2025-07-28 21:32:03 [INFO] [DatabaseManager]: [DB] Table "accounts" checked/created successfully.
+2025-07-28 21:32:03 [INFO] [DatabaseManager]: [DB] Table "message_map" checked/created successfully.
+2025-07-28 21:32:03 [INFO] [DatabaseManager]: [DB] Table "whatsapp_groups" checked/created successfully.
+2025-07-28 21:32:03 [INFO] [DatabaseManager]: [DB] Table "forwarding_rules" checked/created successfully.
+2025-07-28 21:32:03 [INFO] [AppStartup]: [Startup] Database initialized successfully.
+2025-07-28 21:32:03 [INFO] [AccountRepository]: [AccountRepository] Initialized.
+2025-07-28 21:32:03 [INFO] [AccountManager]: [AccountManager] Initialized.
+2025-07-28 21:32:03 [INFO] [AccountManager]: [AccountManager] Loading accounts from database...
+2025-07-28 21:32:03 [INFO] [AccountRepository]: [AccountRepository] Initialized.
+2025-07-28 21:32:03 [INFO] [WhatsAppClient] [Acc:default_test_account]: [WhatsAppClient-default_test_account] Instance created.
+2025-07-28 21:32:03 [INFO] [AccountManager] [Acc:default_test_account]: [AccountManager] Loaded account from DB: default_test_account with status connected.
+2025-07-28 21:32:03 [INFO] [AccountManager]: [AccountManager] Successfully loaded 1 accounts from DB.
+2025-07-28 21:32:03 [INFO] [AccountManager]: [AccountManager] Starting all accounts...
+2025-07-28 21:32:03 [INFO] [DBCleanup]: [DB Cleanup] Scheduled periodic DB cleanup every 168 hours.
+2025-07-28 21:32:03 [INFO] [DBCleanup]: [DB Cleanup] Starting old records cleanup...
+2025-07-28 21:32:03 [INFO] [HttpApi]: [HTTP API] API Server started on http://localhost:3000
+2025-07-28 21:32:03 [INFO] [AccountRepository] [Acc:default_test_account]: [AccountRepository] Account default_test_account status updated to connecting.
+2025-07-28 21:32:03 [INFO] [AccountManager] [Acc:default_test_account]: [AccountManager] Starting account default_test_account...
+2025-07-28 21:32:03 [INFO] [WhatsAppClient] [Acc:default_test_account]: [WhatsAppClient-default_test_account] Initializing client...
+2025-07-28 21:32:03 [INFO] [DBCleanup]: [DB Cleanup] Deleted 0 old records from message_map (older than 30 days).
+2025-07-28 21:32:03 [INFO] [DBCleanup]: [DB Cleanup] Deleted 0 old records from whatsapp_groups (older than 90 days).
+2025-07-28 21:32:03 [INFO] [DBCleanup]: [DB Cleanup] Cleanup finished.
+2025-07-28 21:32:03 [INFO] [AppStartup]: [Startup] Application fully started and awaiting events.
+2025-07-28 21:32:08 [INFO] [WhatsAppClient] [Acc:default_test_account]: [WhatsAppClient-default_test_account] Client is ready and connected!
+2025-07-28 21:32:08 [INFO] [WhatsAppClient] [Acc:default_test_account] [Msg:false_120363418724317936@g.us_3EB0710EA4108DA83C30BD_41004405096502@lid]: [WhatsAppClient-default_test_account] New message received from 120363418724317936@g.us. Type: image.
+2025-07-28 21:32:09 [INFO] [WhatsAppClient] [Acc:default_test_account] [Msg:false_120363077548621628@g.us_3EB06084B81C8C2C581301_41004405096502@lid]: [WhatsAppClient-default_test_account] New message received from 120363077548621628@g.us. Type: chat.
+2025-07-28 21:32:09 [INFO] [WhatsAppClient] [Acc:default_test_account] [Msg:false_120363077548621628@g.us_3EB080A811649A9E614921_41004405096502@lid]: [WhatsAppClient-default_test_account] New message received from 120363077548621628@g.us. Type: image.
+2025-07-28 21:32:09 [INFO] [WhatsAppClient] [Acc:default_test_account] [Msg:false_380502201623@c.us_3EB05992891F27D24D442F]: [WhatsAppClient-default_test_account] New message received from 380502201623@c.us. Type: chat.
+2025-07-28 21:32:09 [INFO] [WhatsAppClient] [Acc:default_test_account] [Msg:false_380502201623@c.us_3EB0C264787438EDFEC24F]: [WhatsAppClient-default_test_account] New message received from 380502201623@c.us. Type: image.
+2025-07-28 21:32:09 [INFO] [WhatsAppClient] [Acc:default_test_account] [Msg:false_120363026966613453@g.us_3F5E2AB48F9A9CFE3918_69866316939433@lid]: [WhatsAppClient-default_test_account] New message received from 120363026966613453@g.us. Type: document.
+2025-07-28 21:32:09 [INFO] [WhatsAppClient] [Acc:default_test_account] [Msg:false_120363077548621628@g.us_3EB06C5B8990CFF3040F4B_41004405096502@lid]: [WhatsAppClient-default_test_account] New message received from 120363077548621628@g.us. Type: chat.
+2025-07-28 21:32:09 [INFO] [WhatsAppClient] [Acc:default_test_account] [Msg:false_380502201623@c.us_3EB0172502E03A4F9E2618]: [WhatsAppClient-default_test_account] New message received from 380502201623@c.us. Type: chat.
+2025-07-28 21:32:09 [INFO] [WhatsAppClient] [Acc:default_test_account] [Msg:false_380502201623@c.us_3EB0432119158FE6A49E7D]: [WhatsAppClient-default_test_account] New message received from 380502201623@c.us. Type: image.
+2025-07-28 21:32:09 [INFO] [AccountRepository] [Acc:default_test_account]: [AccountRepository] Account default_test_account status updated to connected.
+2025-07-28 21:32:09 [ERROR] [HttpApi]: [HTTP API] Unhandled error: Unexpected non-whitespace character after JSON at position 188 (line 7 column 2)
+2025-07-28 21:32:09 [INFO] [WhatsAppClient] [Acc:default_test_account] [Msg:false_120363026966613453@g.us_3F49A91C55748570EB5E_214825774932113@lid]: [WhatsAppClient-default_test_account] New message received from 120363026966613453@g.us. Type: document.
+2025-07-28 21:32:10 [INFO] [WhatsAppClient] [Acc:default_test_account] [Msg:false_120363026966613453@g.us_5E3983D1BFE24C8DBC64_36309838127352@lid]: [WhatsAppClient-default_test_account] New message received from 120363026966613453@g.us. Type: document.
+2025-07-28 21:32:10 [INFO] [WhatsAppClient] [Acc:default_test_account] [Msg:false_120363420559031123@g.us_3EB062FD53C74971EE1E11_93501622636726@lid]: [WhatsAppClient-default_test_account] New message received from 120363420559031123@g.us. Type: chat.
+2025-07-28 21:32:10 [INFO] [WhatsAppClient] [Acc:default_test_account] [Msg:false_120363026966613453@g.us_5EB0A7599F06CE042B46_164634921332765@lid]: [WhatsAppClient-default_test_account] New message received from 120363026966613453@g.us. Type: document.
+2025-07-28 21:32:13 [ERROR] [HttpApi]: [HTTP API] Unhandled error: Unexpected non-whitespace character after JSON at position 188 (line 7 column 2)
+2025-07-28 21:33:33 [INFO] [ForwardingRuleRepository]: [ForwardingRuleRepository] Initialized.
+2025-07-28 21:33:33 [INFO] [RuleController] [Acc:default_test_account]: [API] Request to add new rule for account default_test_account: from 120363402392285397@g.us to 120363403357960372@g.us.
+2025-07-28 21:33:33 [INFO] [ForwardingRuleRepository] [Acc:default_test_account]: [ForwardingRuleRepository] Rule added: ID 1 from 120363402392285397@g.us to 120363403357960372@g.us.
+2025-07-28 21:34:31 [INFO] [ForwardingRuleRepository]: [ForwardingRuleRepository] Initialized.
+2025-07-28 21:34:31 [INFO] [RuleController] [Acc:default_test_account]: [API] Request to get rules for account: default_test_account.
+2025-07-28 21:35:47 [INFO] [AppStartup]: [Config] Configuration validation successful.
+2025-07-28 21:35:47 [INFO] [AppStartup] [PID:30400]: [Startup] Application starting. PID: 30400
+2025-07-28 21:35:47 [INFO] [DatabaseManager]: [DB] DatabaseManager instance created.
+2025-07-28 21:35:47 [INFO] [DatabaseManager]: [DB] Connected to database at ./data/whatsapp_automator.db
+2025-07-28 21:35:47 [INFO] [DatabaseManager]: [DB] Table "accounts" checked/created successfully.
+2025-07-28 21:35:47 [INFO] [DatabaseManager]: [DB] Table "message_map" checked/created successfully.
+2025-07-28 21:35:47 [INFO] [DatabaseManager]: [DB] Table "whatsapp_groups" checked/created successfully.
+2025-07-28 21:35:47 [INFO] [DatabaseManager]: [DB] Table "forwarding_rules" checked/created successfully.
+2025-07-28 21:35:47 [INFO] [AppStartup]: [Startup] Database initialized successfully.
+2025-07-28 21:35:47 [INFO] [AccountRepository]: [AccountRepository] Initialized.
+2025-07-28 21:35:47 [INFO] [AccountManager]: [AccountManager] Initialized.
+2025-07-28 21:35:47 [INFO] [AccountManager]: [AccountManager] Loading accounts from database...
+2025-07-28 21:35:47 [INFO] [AccountRepository]: [AccountRepository] Initialized.
+2025-07-28 21:35:47 [INFO] [WhatsAppClient] [Acc:default_test_account]: [WhatsAppClient-default_test_account] Instance created.
+2025-07-28 21:35:47 [INFO] [AccountManager] [Acc:default_test_account]: [AccountManager] Loaded account from DB: default_test_account with status connected.
+2025-07-28 21:35:47 [INFO] [AccountManager]: [AccountManager] Successfully loaded 1 accounts from DB.
+2025-07-28 21:35:47 [INFO] [AccountManager]: [AccountManager] Starting all accounts...
+2025-07-28 21:35:47 [INFO] [DBCleanup]: [DB Cleanup] Scheduled periodic DB cleanup every 168 hours.
+2025-07-28 21:35:47 [INFO] [DBCleanup]: [DB Cleanup] Starting old records cleanup...
+2025-07-28 21:35:47 [INFO] [HttpApi]: [HTTP API] API Server started on http://localhost:3000
+2025-07-28 21:35:47 [INFO] [AccountRepository] [Acc:default_test_account]: [AccountRepository] Account default_test_account status updated to connecting.
+2025-07-28 21:35:47 [INFO] [AccountManager] [Acc:default_test_account]: [AccountManager] Starting account default_test_account...
+2025-07-28 21:35:47 [INFO] [WhatsAppClient] [Acc:default_test_account]: [WhatsAppClient-default_test_account] Initializing client...
+2025-07-28 21:35:47 [INFO] [DBCleanup]: [DB Cleanup] Deleted 0 old records from message_map (older than 30 days).
+2025-07-28 21:35:47 [INFO] [DBCleanup]: [DB Cleanup] Deleted 0 old records from whatsapp_groups (older than 90 days).
+2025-07-28 21:35:47 [INFO] [DBCleanup]: [DB Cleanup] Cleanup finished.
+2025-07-28 21:35:47 [INFO] [AppStartup]: [Startup] Application fully started and awaiting events.
+2025-07-28 21:35:53 [INFO] [WhatsAppClient] [Acc:default_test_account]: [WhatsAppClient-default_test_account] Client is ready and connected!
+2025-07-28 21:35:53 [INFO] [AccountRepository] [Acc:default_test_account]: [AccountRepository] Account default_test_account status updated to connected.
+2025-07-28 21:36:43 [INFO] [AppStartup]: [Config] Configuration validation successful.
+2025-07-28 21:36:43 [INFO] [AppStartup] [PID:2692]: [Startup] Application starting. PID: 2692
+2025-07-28 21:36:43 [INFO] [DatabaseManager]: [DB] DatabaseManager instance created.
+2025-07-28 21:36:43 [INFO] [DatabaseManager]: [DB] Connected to database at ./data/whatsapp_automator.db
+2025-07-28 21:36:43 [INFO] [DatabaseManager]: [DB] Table "accounts" checked/created successfully.
+2025-07-28 21:36:43 [INFO] [DatabaseManager]: [DB] Table "message_map" checked/created successfully.
+2025-07-28 21:36:43 [INFO] [DatabaseManager]: [DB] Table "whatsapp_groups" checked/created successfully.
+2025-07-28 21:36:43 [INFO] [DatabaseManager]: [DB] Table "forwarding_rules" checked/created successfully.
+2025-07-28 21:36:43 [INFO] [AppStartup]: [Startup] Database initialized successfully.
+2025-07-28 21:36:43 [INFO] [AccountRepository]: [AccountRepository] Initialized.
+2025-07-28 21:36:43 [INFO] [AccountManager]: [AccountManager] Initialized.
+2025-07-28 21:36:43 [INFO] [AccountManager]: [AccountManager] Loading accounts from database...
+2025-07-28 21:36:43 [INFO] [AccountRepository]: [AccountRepository] Initialized.
+2025-07-28 21:36:43 [INFO] [WhatsAppClient] [Acc:default_test_account]: [WhatsAppClient-default_test_account] Instance created.
+2025-07-28 21:36:43 [INFO] [AccountManager] [Acc:default_test_account]: [AccountManager] Loaded account from DB: default_test_account with status connected.
+2025-07-28 21:36:43 [INFO] [AccountManager]: [AccountManager] Successfully loaded 1 accounts from DB.
+2025-07-28 21:36:43 [INFO] [AccountManager]: [AccountManager] Starting all accounts...
+2025-07-28 21:36:43 [INFO] [DBCleanup]: [DB Cleanup] Scheduled periodic DB cleanup every 168 hours.
+2025-07-28 21:36:43 [INFO] [DBCleanup]: [DB Cleanup] Starting old records cleanup...
+2025-07-28 21:36:43 [INFO] [HttpApi]: [HTTP API] API Server started on http://localhost:3000
+2025-07-28 21:36:43 [INFO] [AccountRepository] [Acc:default_test_account]: [AccountRepository] Account default_test_account status updated to connecting.
+2025-07-28 21:36:43 [INFO] [AccountManager] [Acc:default_test_account]: [AccountManager] Starting account default_test_account...
+2025-07-28 21:36:43 [INFO] [WhatsAppClient] [Acc:default_test_account]: [WhatsAppClient-default_test_account] Initializing client...
+2025-07-28 21:36:43 [INFO] [DBCleanup]: [DB Cleanup] Deleted 0 old records from message_map (older than 30 days).
+2025-07-28 21:36:43 [INFO] [DBCleanup]: [DB Cleanup] Deleted 0 old records from whatsapp_groups (older than 90 days).
+2025-07-28 21:36:43 [INFO] [DBCleanup]: [DB Cleanup] Cleanup finished.
+2025-07-28 21:36:43 [INFO] [AppStartup]: [Startup] Application fully started and awaiting events.
+2025-07-28 21:36:49 [INFO] [WhatsAppClient] [Acc:default_test_account]: [WhatsAppClient-default_test_account] Client is ready and connected!
+2025-07-28 21:36:49 [INFO] [AccountRepository] [Acc:default_test_account]: [AccountRepository] Account default_test_account status updated to connected.
+2025-07-28 21:37:18 [INFO] [AppStartup]: [Config] Configuration validation successful.
+2025-07-28 21:37:18 [INFO] [AppStartup] [PID:29868]: [Startup] Application starting. PID: 29868
+2025-07-28 21:37:18 [INFO] [DatabaseManager]: [DB] DatabaseManager instance created.
+2025-07-28 21:37:18 [INFO] [DatabaseManager]: [DB] Connected to database at ./data/whatsapp_automator.db
+2025-07-28 21:37:18 [INFO] [DatabaseManager]: [DB] Table "accounts" checked/created successfully.
+2025-07-28 21:37:18 [INFO] [DatabaseManager]: [DB] Table "message_map" checked/created successfully.
+2025-07-28 21:37:18 [INFO] [DatabaseManager]: [DB] Table "whatsapp_groups" checked/created successfully.
+2025-07-28 21:37:18 [INFO] [DatabaseManager]: [DB] Table "forwarding_rules" checked/created successfully.
+2025-07-28 21:37:18 [INFO] [AppStartup]: [Startup] Database initialized successfully.
+2025-07-28 21:37:18 [INFO] [AccountRepository]: [AccountRepository] Initialized.
+2025-07-28 21:37:18 [INFO] [AccountManager]: [AccountManager] Initialized.
+2025-07-28 21:37:18 [INFO] [AccountManager]: [AccountManager] Loading accounts from database...
+2025-07-28 21:37:18 [INFO] [AccountRepository]: [AccountRepository] Initialized.
+2025-07-28 21:37:18 [INFO] [WhatsAppClient] [Acc:default_test_account]: [WhatsAppClient-default_test_account] Instance created.
+2025-07-28 21:37:18 [INFO] [AccountManager] [Acc:default_test_account]: [AccountManager] Loaded account from DB: default_test_account with status connected.
+2025-07-28 21:37:18 [INFO] [AccountManager]: [AccountManager] Successfully loaded 1 accounts from DB.
+2025-07-28 21:37:18 [INFO] [AccountManager]: [AccountManager] Starting all accounts...
+2025-07-28 21:37:18 [INFO] [DBCleanup]: [DB Cleanup] Scheduled periodic DB cleanup every 168 hours.
+2025-07-28 21:37:18 [INFO] [DBCleanup]: [DB Cleanup] Starting old records cleanup...
+2025-07-28 21:37:18 [INFO] [HttpApi]: [HTTP API] API Server started on http://localhost:3000
+2025-07-28 21:37:18 [INFO] [AccountRepository] [Acc:default_test_account]: [AccountRepository] Account default_test_account status updated to connecting.
+2025-07-28 21:37:18 [INFO] [AccountManager] [Acc:default_test_account]: [AccountManager] Starting account default_test_account...
+2025-07-28 21:37:18 [INFO] [WhatsAppClient] [Acc:default_test_account]: [WhatsAppClient-default_test_account] Initializing client...
+2025-07-28 21:37:18 [INFO] [DBCleanup]: [DB Cleanup] Deleted 0 old records from message_map (older than 30 days).
+2025-07-28 21:37:18 [INFO] [DBCleanup]: [DB Cleanup] Deleted 0 old records from whatsapp_groups (older than 90 days).
+2025-07-28 21:37:18 [INFO] [DBCleanup]: [DB Cleanup] Cleanup finished.
+2025-07-28 21:37:18 [INFO] [AppStartup]: [Startup] Application fully started and awaiting events.
+2025-07-28 21:37:24 [INFO] [WhatsAppClient] [Acc:default_test_account]: [WhatsAppClient-default_test_account] Client is ready and connected!
+2025-07-28 21:37:24 [INFO] [AccountRepository] [Acc:default_test_account]: [AccountRepository] Account default_test_account status updated to connected.
+2025-07-28 21:38:06 [INFO] [AppStartup]: [Config] Configuration validation successful.
+2025-07-28 21:38:06 [INFO] [AppStartup] [PID:28140]: [Startup] Application starting. PID: 28140
+2025-07-28 21:38:06 [INFO] [DatabaseManager]: [DB] DatabaseManager instance created.
+2025-07-28 21:38:06 [INFO] [DatabaseManager]: [DB] Connected to database at ./data/whatsapp_automator.db
+2025-07-28 21:38:06 [INFO] [DatabaseManager]: [DB] Table "accounts" checked/created successfully.
+2025-07-28 21:38:06 [INFO] [DatabaseManager]: [DB] Table "message_map" checked/created successfully.
+2025-07-28 21:38:06 [INFO] [DatabaseManager]: [DB] Table "whatsapp_groups" checked/created successfully.
+2025-07-28 21:38:06 [INFO] [DatabaseManager]: [DB] Table "forwarding_rules" checked/created successfully.
+2025-07-28 21:38:06 [INFO] [AppStartup]: [Startup] Database initialized successfully.
+2025-07-28 21:38:06 [INFO] [AccountRepository]: [AccountRepository] Initialized.
+2025-07-28 21:38:06 [INFO] [AccountManager]: [AccountManager] Initialized.
+2025-07-28 21:38:06 [INFO] [AccountManager]: [AccountManager] Loading accounts from database...
+2025-07-28 21:38:06 [INFO] [AccountRepository]: [AccountRepository] Initialized.
+2025-07-28 21:38:06 [INFO] [WhatsAppClient] [Acc:default_test_account]: [WhatsAppClient-default_test_account] Instance created.
+2025-07-28 21:38:06 [INFO] [AccountManager] [Acc:default_test_account]: [AccountManager] Loaded account from DB: default_test_account with status connected.
+2025-07-28 21:38:06 [INFO] [AccountManager]: [AccountManager] Successfully loaded 1 accounts from DB.
+2025-07-28 21:38:06 [INFO] [AccountManager]: [AccountManager] Starting all accounts...
+2025-07-28 21:38:06 [INFO] [DBCleanup]: [DB Cleanup] Scheduled periodic DB cleanup every 168 hours.
+2025-07-28 21:38:06 [INFO] [DBCleanup]: [DB Cleanup] Starting old records cleanup...
+2025-07-28 21:38:06 [INFO] [HttpApi]: [HTTP API] API Server started on http://localhost:3000
+2025-07-28 21:38:06 [INFO] [AccountRepository] [Acc:default_test_account]: [AccountRepository] Account default_test_account status updated to connecting.
+2025-07-28 21:38:06 [INFO] [AccountManager] [Acc:default_test_account]: [AccountManager] Starting account default_test_account...
+2025-07-28 21:38:06 [INFO] [WhatsAppClient] [Acc:default_test_account]: [WhatsAppClient-default_test_account] Initializing client...
+2025-07-28 21:38:06 [INFO] [DBCleanup]: [DB Cleanup] Deleted 0 old records from message_map (older than 30 days).
+2025-07-28 21:38:06 [INFO] [DBCleanup]: [DB Cleanup] Deleted 0 old records from whatsapp_groups (older than 90 days).
+2025-07-28 21:38:06 [INFO] [DBCleanup]: [DB Cleanup] Cleanup finished.
+2025-07-28 21:38:06 [INFO] [AppStartup]: [Startup] Application fully started and awaiting events.
+2025-07-28 21:38:12 [INFO] [WhatsAppClient] [Acc:default_test_account]: [WhatsAppClient-default_test_account] Client is ready and connected!
+2025-07-28 21:38:12 [INFO] [AccountRepository] [Acc:default_test_account]: [AccountRepository] Account default_test_account status updated to connected.
+2025-07-28 21:38:45 [INFO] [AppStartup]: [Config] Configuration validation successful.
+2025-07-28 21:38:45 [INFO] [AppStartup] [PID:10484]: [Startup] Application starting. PID: 10484
+2025-07-28 21:38:45 [INFO] [DatabaseManager]: [DB] DatabaseManager instance created.
+2025-07-28 21:38:45 [INFO] [DatabaseManager]: [DB] Connected to database at ./data/whatsapp_automator.db
+2025-07-28 21:38:45 [INFO] [DatabaseManager]: [DB] Table "accounts" checked/created successfully.
+2025-07-28 21:38:45 [INFO] [DatabaseManager]: [DB] Table "message_map" checked/created successfully.
+2025-07-28 21:38:45 [INFO] [DatabaseManager]: [DB] Table "whatsapp_groups" checked/created successfully.
+2025-07-28 21:38:45 [INFO] [DatabaseManager]: [DB] Table "forwarding_rules" checked/created successfully.
+2025-07-28 21:38:45 [INFO] [AppStartup]: [Startup] Database initialized successfully.
+2025-07-28 21:38:45 [INFO] [AccountRepository]: [AccountRepository] Initialized.
+2025-07-28 21:38:45 [INFO] [AccountManager]: [AccountManager] Initialized.
+2025-07-28 21:38:45 [INFO] [AccountManager]: [AccountManager] Loading accounts from database...
+2025-07-28 21:38:45 [INFO] [AccountRepository]: [AccountRepository] Initialized.
+2025-07-28 21:38:45 [INFO] [WhatsAppClient] [Acc:default_test_account]: [WhatsAppClient-default_test_account] Instance created.
+2025-07-28 21:38:45 [INFO] [AccountManager] [Acc:default_test_account]: [AccountManager] Loaded account from DB: default_test_account with status connected.
+2025-07-28 21:38:45 [INFO] [AccountManager]: [AccountManager] Successfully loaded 1 accounts from DB.
+2025-07-28 21:38:45 [INFO] [AccountManager]: [AccountManager] Starting all accounts...
+2025-07-28 21:38:45 [INFO] [DBCleanup]: [DB Cleanup] Scheduled periodic DB cleanup every 168 hours.
+2025-07-28 21:38:45 [INFO] [DBCleanup]: [DB Cleanup] Starting old records cleanup...
+2025-07-28 21:38:45 [INFO] [HttpApi]: [HTTP API] API Server started on http://localhost:3000
+2025-07-28 21:38:45 [INFO] [AccountRepository] [Acc:default_test_account]: [AccountRepository] Account default_test_account status updated to connecting.
+2025-07-28 21:38:45 [INFO] [AccountManager] [Acc:default_test_account]: [AccountManager] Starting account default_test_account...
+2025-07-28 21:38:45 [INFO] [WhatsAppClient] [Acc:default_test_account]: [WhatsAppClient-default_test_account] Initializing client...
+2025-07-28 21:38:45 [INFO] [DBCleanup]: [DB Cleanup] Deleted 0 old records from message_map (older than 30 days).
+2025-07-28 21:38:45 [INFO] [DBCleanup]: [DB Cleanup] Deleted 0 old records from whatsapp_groups (older than 90 days).
+2025-07-28 21:38:45 [INFO] [DBCleanup]: [DB Cleanup] Cleanup finished.
+2025-07-28 21:38:45 [INFO] [AppStartup]: [Startup] Application fully started and awaiting events.
+2025-07-28 21:38:48 [INFO] [AppStartup]: [Config] Configuration validation successful.
+2025-07-28 21:38:48 [INFO] [AppStartup] [PID:27176]: [Startup] Application starting. PID: 27176
+2025-07-28 21:38:48 [INFO] [DatabaseManager]: [DB] DatabaseManager instance created.
+2025-07-28 21:38:48 [INFO] [DatabaseManager]: [DB] Connected to database at ./data/whatsapp_automator.db
+2025-07-28 21:38:48 [INFO] [DatabaseManager]: [DB] Table "accounts" checked/created successfully.
+2025-07-28 21:38:48 [INFO] [DatabaseManager]: [DB] Table "message_map" checked/created successfully.
+2025-07-28 21:38:48 [INFO] [DatabaseManager]: [DB] Table "whatsapp_groups" checked/created successfully.
+2025-07-28 21:38:48 [INFO] [DatabaseManager]: [DB] Table "forwarding_rules" checked/created successfully.
+2025-07-28 21:38:48 [INFO] [AppStartup]: [Startup] Database initialized successfully.
+2025-07-28 21:38:48 [INFO] [AccountRepository]: [AccountRepository] Initialized.
+2025-07-28 21:38:48 [INFO] [AccountManager]: [AccountManager] Initialized.
+2025-07-28 21:38:48 [INFO] [AccountManager]: [AccountManager] Loading accounts from database...
+2025-07-28 21:38:48 [INFO] [AccountRepository]: [AccountRepository] Initialized.
+2025-07-28 21:38:48 [INFO] [WhatsAppClient] [Acc:default_test_account]: [WhatsAppClient-default_test_account] Instance created.
+2025-07-28 21:38:48 [INFO] [AccountManager] [Acc:default_test_account]: [AccountManager] Loaded account from DB: default_test_account with status connecting.
+2025-07-28 21:38:48 [INFO] [AccountManager]: [AccountManager] Successfully loaded 1 accounts from DB.
+2025-07-28 21:38:48 [INFO] [AccountManager]: [AccountManager] Starting all accounts...
+2025-07-28 21:38:48 [INFO] [DBCleanup]: [DB Cleanup] Scheduled periodic DB cleanup every 168 hours.
+2025-07-28 21:38:48 [INFO] [DBCleanup]: [DB Cleanup] Starting old records cleanup...
+2025-07-28 21:38:48 [INFO] [HttpApi]: [HTTP API] API Server started on http://localhost:3000
+2025-07-28 21:38:48 [INFO] [AccountRepository] [Acc:default_test_account]: [AccountRepository] Account default_test_account status updated to connecting.
+2025-07-28 21:38:48 [INFO] [AccountManager] [Acc:default_test_account]: [AccountManager] Starting account default_test_account...
+2025-07-28 21:38:48 [INFO] [WhatsAppClient] [Acc:default_test_account]: [WhatsAppClient-default_test_account] Initializing client...
+2025-07-28 21:38:48 [INFO] [DBCleanup]: [DB Cleanup] Deleted 0 old records from message_map (older than 30 days).
+2025-07-28 21:38:48 [INFO] [DBCleanup]: [DB Cleanup] Deleted 0 old records from whatsapp_groups (older than 90 days).
+2025-07-28 21:38:48 [INFO] [DBCleanup]: [DB Cleanup] Cleanup finished.
+2025-07-28 21:38:48 [INFO] [AppStartup]: [Startup] Application fully started and awaiting events.
+2025-07-28 21:38:54 [INFO] [WhatsAppClient] [Acc:default_test_account]: [WhatsAppClient-default_test_account] Client is ready and connected!
+2025-07-28 21:38:54 [INFO] [AccountRepository] [Acc:default_test_account]: [AccountRepository] Account default_test_account status updated to connected.
+2025-07-28 21:39:08 [INFO] [AppStartup]: [Config] Configuration validation successful.
+2025-07-28 21:39:08 [INFO] [AppStartup] [PID:28416]: [Startup] Application starting. PID: 28416
+2025-07-28 21:39:08 [INFO] [DatabaseManager]: [DB] DatabaseManager instance created.
+2025-07-28 21:39:08 [INFO] [DatabaseManager]: [DB] Connected to database at ./data/whatsapp_automator.db
+2025-07-28 21:39:08 [INFO] [DatabaseManager]: [DB] Table "accounts" checked/created successfully.
+2025-07-28 21:39:08 [INFO] [DatabaseManager]: [DB] Table "message_map" checked/created successfully.
+2025-07-28 21:39:08 [INFO] [DatabaseManager]: [DB] Table "whatsapp_groups" checked/created successfully.
+2025-07-28 21:39:08 [INFO] [DatabaseManager]: [DB] Table "forwarding_rules" checked/created successfully.
+2025-07-28 21:39:08 [INFO] [AppStartup]: [Startup] Database initialized successfully.
+2025-07-28 21:39:08 [INFO] [AccountRepository]: [AccountRepository] Initialized.
+2025-07-28 21:39:08 [INFO] [AccountManager]: [AccountManager] Initialized.
+2025-07-28 21:39:08 [INFO] [AccountManager]: [AccountManager] Loading accounts from database...
+2025-07-28 21:39:08 [INFO] [AccountRepository]: [AccountRepository] Initialized.
+2025-07-28 21:39:08 [INFO] [WhatsAppClient] [Acc:default_test_account]: [WhatsAppClient-default_test_account] Instance created.
+2025-07-28 21:39:08 [INFO] [AccountManager] [Acc:default_test_account]: [AccountManager] Loaded account from DB: default_test_account with status connected.
+2025-07-28 21:39:08 [INFO] [AccountManager]: [AccountManager] Successfully loaded 1 accounts from DB.
+2025-07-28 21:39:08 [INFO] [AccountManager]: [AccountManager] Starting all accounts...
+2025-07-28 21:39:08 [INFO] [DBCleanup]: [DB Cleanup] Scheduled periodic DB cleanup every 168 hours.
+2025-07-28 21:39:08 [INFO] [DBCleanup]: [DB Cleanup] Starting old records cleanup...
+2025-07-28 21:39:08 [INFO] [HttpApi]: [HTTP API] API Server started on http://localhost:3000
+2025-07-28 21:39:08 [INFO] [AccountRepository] [Acc:default_test_account]: [AccountRepository] Account default_test_account status updated to connecting.
+2025-07-28 21:39:08 [INFO] [AccountManager] [Acc:default_test_account]: [AccountManager] Starting account default_test_account...
+2025-07-28 21:39:08 [INFO] [WhatsAppClient] [Acc:default_test_account]: [WhatsAppClient-default_test_account] Initializing client...
+2025-07-28 21:39:08 [INFO] [DBCleanup]: [DB Cleanup] Deleted 0 old records from message_map (older than 30 days).
+2025-07-28 21:39:08 [INFO] [DBCleanup]: [DB Cleanup] Deleted 0 old records from whatsapp_groups (older than 90 days).
+2025-07-28 21:39:08 [INFO] [DBCleanup]: [DB Cleanup] Cleanup finished.
+2025-07-28 21:39:08 [INFO] [AppStartup]: [Startup] Application fully started and awaiting events.
+2025-07-28 21:39:13 [INFO] [WhatsAppClient] [Acc:default_test_account]: [WhatsAppClient-default_test_account] Client is ready and connected!
+2025-07-28 21:39:14 [INFO] [AccountRepository] [Acc:default_test_account]: [AccountRepository] Account default_test_account status updated to connected.
+2025-07-28 21:39:37 [INFO] [AppStartup]: [Config] Configuration validation successful.
+2025-07-28 21:39:37 [INFO] [AppStartup] [PID:30044]: [Startup] Application starting. PID: 30044
+2025-07-28 21:39:37 [INFO] [DatabaseManager]: [DB] DatabaseManager instance created.
+2025-07-28 21:39:37 [INFO] [DatabaseManager]: [DB] Connected to database at ./data/whatsapp_automator.db
+2025-07-28 21:39:37 [INFO] [DatabaseManager]: [DB] Table "accounts" checked/created successfully.
+2025-07-28 21:39:37 [INFO] [DatabaseManager]: [DB] Table "message_map" checked/created successfully.
+2025-07-28 21:39:37 [INFO] [DatabaseManager]: [DB] Table "whatsapp_groups" checked/created successfully.
+2025-07-28 21:39:37 [INFO] [DatabaseManager]: [DB] Table "forwarding_rules" checked/created successfully.
+2025-07-28 21:39:37 [INFO] [AppStartup]: [Startup] Database initialized successfully.
+2025-07-28 21:39:37 [INFO] [AccountRepository]: [AccountRepository] Initialized.
+2025-07-28 21:39:37 [INFO] [AccountManager]: [AccountManager] Initialized.
+2025-07-28 21:39:37 [INFO] [AccountManager]: [AccountManager] Loading accounts from database...
+2025-07-28 21:39:37 [INFO] [AccountRepository]: [AccountRepository] Initialized.
+2025-07-28 21:39:37 [INFO] [WhatsAppClient] [Acc:default_test_account]: [WhatsAppClient-default_test_account] Instance created.
+2025-07-28 21:39:37 [INFO] [AccountManager] [Acc:default_test_account]: [AccountManager] Loaded account from DB: default_test_account with status connected.
+2025-07-28 21:39:37 [INFO] [AccountManager]: [AccountManager] Successfully loaded 1 accounts from DB.
+2025-07-28 21:39:37 [INFO] [AccountManager]: [AccountManager] Starting all accounts...
+2025-07-28 21:39:37 [INFO] [DBCleanup]: [DB Cleanup] Scheduled periodic DB cleanup every 168 hours.
+2025-07-28 21:39:37 [INFO] [DBCleanup]: [DB Cleanup] Starting old records cleanup...
+2025-07-28 21:39:37 [INFO] [HttpApi]: [HTTP API] API Server started on http://localhost:3000
+2025-07-28 21:39:37 [INFO] [AccountRepository] [Acc:default_test_account]: [AccountRepository] Account default_test_account status updated to connecting.
+2025-07-28 21:39:37 [INFO] [AccountManager] [Acc:default_test_account]: [AccountManager] Starting account default_test_account...
+2025-07-28 21:39:37 [INFO] [WhatsAppClient] [Acc:default_test_account]: [WhatsAppClient-default_test_account] Initializing client...
+2025-07-28 21:39:37 [INFO] [DBCleanup]: [DB Cleanup] Deleted 0 old records from message_map (older than 30 days).
+2025-07-28 21:39:37 [INFO] [DBCleanup]: [DB Cleanup] Deleted 0 old records from whatsapp_groups (older than 90 days).
+2025-07-28 21:39:37 [INFO] [DBCleanup]: [DB Cleanup] Cleanup finished.
+2025-07-28 21:39:37 [INFO] [AppStartup]: [Startup] Application fully started and awaiting events.
+2025-07-28 21:39:43 [INFO] [WhatsAppClient] [Acc:default_test_account]: [WhatsAppClient-default_test_account] Client is ready and connected!
+2025-07-28 21:39:43 [INFO] [AccountRepository] [Acc:default_test_account]: [AccountRepository] Account default_test_account status updated to connected.
+2025-07-28 21:39:51 [INFO] [AppShutdown]: [Shutdown] SIGINT signal received. Starting graceful shutdown...
